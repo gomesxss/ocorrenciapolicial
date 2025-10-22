@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let perguntas = [
+  "Telefonou para a vítima?",
+  "Esteve no local da ocorrência?",
+  "Mora perto da vítima?",
+  "Já trabalhou com a vítima?",
+  "Tinha algum desentendimento com a vítima?",
+  "Viu a vítima no dia do crime?",
+  "Conhece alguém envolvido no caso?",
+  "Estava nas proximidades no momento da ocorrência?",
+  "Tem algum objeto semelhante ao usado no crime?",
+  "Já discutiu com a vítima antes?"
+];
+
+let respostasSim = 0;
+
+for (let i = 0; i < perguntas.length; i++) {
+  let resposta = prompt(perguntas[i]).toLowerCase().trim();
+
+  if (resposta === "sim") {
+    respostasSim++;
+  }
+}
+
+let parecer;
+
+if (respostasSim < 5) {
+  parecer = "Inocente";
+} else if (respostasSim === 5) {
+  parecer = "Suspeita";
+} else if (respostasSim <= 8) {
+  parecer = "Cúmplice";
+} else {
+  parecer = "Culpada";
+}
+
+alert('Total de respostas "sim": ${respostasSim}\nParecer: ${parecer});
+    </script>
+</body>
+</html>
